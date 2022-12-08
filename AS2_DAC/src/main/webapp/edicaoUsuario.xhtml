@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+	<title>Editar User</title>
+</h:head>
+<h:body>
+	<h:form id="formulario_edit_user">
+		<p:panel header="Editar os dados do User">
+			<p:messages id="messages" showDetail="true" closable="true">
+				<p:autoUpdate />
+			</p:messages>
+			<h:inputHidden value="#{usuarioBean.meuUsuario.id}" />
+			<p:panelGrid columns="2">
+
+				<p:outputLabel value="Usuario" />
+				<p:inputText value="#{usuarioBean.meuUsuario.usuario}" />
+
+				<p:outputLabel value="Nome" />
+				<p:inputText value="#{usuarioBean.meuUsuario.nome}" />
+
+				<p:outputLabel value="Senha" />
+				<p:inputText value="#{usuarioBean.meuUsuario.senha}" />
+
+				<p:commandButton value="Salvar" action="#{usuarioBean.editar}" update="formulario_edit_user"></p:commandButton>
+				<p:linkButton value="Voltar" outcome="listagemUsuario"></p:linkButton>
+			</p:panelGrid>
+		</p:panel>
+	</h:form>
+</h:body>
+</html>

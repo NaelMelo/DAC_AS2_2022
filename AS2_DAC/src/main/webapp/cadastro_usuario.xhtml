@@ -1,0 +1,33 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+	<title>Cadastro de usuario</title>
+</h:head>
+<h:body>
+	<h:form id="formularioUsuario">
+		<p:messages id="messages" showDetail="true" closable="true">
+			<p:autoUpdate />
+		</p:messages>
+		<p:panel header="Cadastro de usuario">
+			<p:panelGrid columns="2">
+			
+				<p:outputLabel value="Usuario" />
+				<p:inputText value="#{usuarioBean.meuUsuario.usuario}" />
+
+				<p:outputLabel value="Nome" />
+				<p:inputText value="#{usuarioBean.meuUsuario.nome}" />
+				
+				<p:outputLabel value="Senha" />
+				<p:inputText value="#{usuarioBean.meuUsuario.senha}" />
+
+				<p:commandButton value="Salvar" action="#{usuarioBean.salvar}" update="formularioUsuario" />
+				<p:link outcome="listagemUsuario" value="Listar" />
+				
+			</p:panelGrid>
+		</p:panel>
+	</h:form>
+</h:body>
+</html>
